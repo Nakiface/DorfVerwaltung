@@ -1,4 +1,7 @@
-﻿namespace Dorfverwaltung
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Dorfverwaltung
 {
     public class Dwarf
     {
