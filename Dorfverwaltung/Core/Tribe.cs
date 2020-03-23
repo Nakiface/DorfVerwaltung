@@ -8,8 +8,8 @@ namespace Dorfverwaltung
         public string Name { get; set; }
         public int Gründung { get; set; }
         public int Macht =>
-            dwarfList.Aggregate(0, (a, dwarf) => a + dwarf.Macht);
-        public List<Dwarf> dwarfList { get; set; }
+            Zwerge.Aggregate(0, (a, dwarf) => a + dwarf.Macht);
+        public List<Dwarf> Zwerge { get; set; }
         public string leader { get; set; }
         public int Führer_seid { get; set; }
 
@@ -17,19 +17,19 @@ namespace Dorfverwaltung
         {
             this.Name = name;
             this.Gründung = founding;
-            this.dwarfList = dwarfList;
+            this.Zwerge = dwarfList;
             this.leader = leader?.Name;
             this.Führer_seid = leadsince;
         }
 
         public void addDwarf(Dwarf dwarf)
         {
-            dwarfList.Add(dwarf);
+            Zwerge.Add(dwarf);
         }
 
         public void removeDwarf(Dwarf dwarf)
         {
-            dwarfList.Remove(dwarf);
+            Zwerge.Remove(dwarf);
         }
 
         public bool setLeader(Dwarf dwarf, int leadsince)
@@ -39,7 +39,7 @@ namespace Dorfverwaltung
             else
                 return false;
 
-            if (dwarfList.Contains(dwarf))
+            if (Zwerge.Contains(dwarf))
                 this.leader = dwarf.Name;
             else
                 return false;

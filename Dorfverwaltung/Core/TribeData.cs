@@ -56,6 +56,8 @@ namespace Dorfverwaltung
             tribeList.Add(altobardenTribe);
 
             return tribeList;
+
+            
         }
 
         public static List<Tribe> addTribe(List<Tribe> tribeList, Tribe tribe)
