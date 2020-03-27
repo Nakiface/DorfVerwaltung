@@ -150,6 +150,7 @@
             this.ribbonPageGroup3});
             this.ribbonPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage2.ImageOptions.Image")));
             this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Tag = "Tribe";
             this.ribbonPage2.Text = "Stammverwaltung";
             // 
             // ribbonPageGroup3
@@ -163,6 +164,7 @@
             this.ribbonPageGroup4});
             this.ribbonPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage3.ImageOptions.Image")));
             this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Tag = "Dwarf";
             this.ribbonPage3.Text = "Zwergverwaltung";
             // 
             // ribbonPageGroup4
@@ -174,6 +176,7 @@
             // 
             this.ribbonPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage4.ImageOptions.Image")));
             this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Tag = "Weapon";
             this.ribbonPage4.Text = "Inventarverwaltung";
             // 
             // repositoryItemSpinEdit1
@@ -187,6 +190,7 @@
             // 
             this.gridView1.GridControl = this.gridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.MultiSelect = true;
             // 
             // gridControl
             // 

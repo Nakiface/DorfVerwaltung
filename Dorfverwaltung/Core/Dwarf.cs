@@ -3,6 +3,10 @@ using System.Linq;
 
 namespace Dorfverwaltung
 {
+    public interface ITribeMember
+    {
+        string Name { get; set; }
+    }
     public class Dwarf
     {
         public string Name { get; set; }
