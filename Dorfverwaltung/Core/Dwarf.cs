@@ -10,13 +10,13 @@ namespace Dorfverwaltung
     }
     public class Dwarf : ITribeMember
     {
-        public string Name { get; set; }
+        public string Name { get; set; } 
         public int Alter { get; set; }
         public int Macht =>
-            Waffen.Aggregate(0, (a, item) => a + item.Macht);
-        public List<Weapon> Waffen { get; set; }
+            Waffen?.Aggregate(0, (a, item) => a + item.Macht) ?? 0;
+        public List<Weapon> Waffen { get; set; } = new List<Weapon>();
 
-        public Dwarf(string name, int age, List<Weapon> weaponList = null)
+        public Dwarf(string name, int age, List<Weapon> weaponList)
         {
             this.Name = name;
             this.Alter = age;

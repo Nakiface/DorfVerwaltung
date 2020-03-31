@@ -121,6 +121,9 @@
   <data name="panelControlMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="vGridControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="vGridControl1.BandsInterval" type="System.Int32, mscorlib">
     <value>3</value>
@@ -139,7 +142,7 @@
     <value>133</value>
   </data>
   <data name="vGridControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 346</value>
+    <value>297, 228</value>
   </data>
   <data name="vGridControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -178,10 +181,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelControlMain.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="simpleButtonAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="simpleButtonAdd.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -258,6 +261,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;simpleButtonAdd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkedListBoxControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="checkedListBoxControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 242</value>
+  </data>
+  <data name="checkedListBoxControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 120</value>
+  </data>
+  <data name="checkedListBoxControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxControl1.Name" xml:space="preserve">
+    <value>checkedListBoxControl1</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxControl1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckedListBoxControl, DevExpress.XtraEditors.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkedListBoxControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -35,10 +35,11 @@ namespace Dorfverwaltung
             SetTaxes();           
         }
 
-        public void AddChanges(BindingSource bindingSource)
+        public void AddChanges(BindingSource bindingSource, string name)
         {
-            tribeList = DoStuff.AddStuff(bindingSource, tribeList);
-            gridControl.Refresh();
+            tribeList = DoStuff.AddDataToList(bindingSource, tribeList, name);
+            SetTaxes();
+            gridControl.RefreshDataSource();
         }
 
         private void gridMasterRowExpanded(object sender, CustomMasterRowEventArgs e)
@@ -96,9 +97,25 @@ namespace Dorfverwaltung
         private void barButtonItemAddTribe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = new Tribe();
-            FormAdd addTribeForm = new FormAdd(bindingSource, this);
+            bindingSource.DataSource = new Tribe("",0,new List<Dwarf>());
+            FormAdd addTribeForm = new FormAdd(bindingSource, this, tribeList);
             addTribeForm.ShowDialog();
+        }
+
+        private void barButtonItemAddDwarf_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = new Dwarf("",0,new List<Weapon>());
+            FormAdd addDwarfForm = new FormAdd(bindingSource, this, tribeList);
+            addDwarfForm.ShowDialog();
+        }
+
+        private void barButtonItemAddItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = new Weapon();
+            FormAdd addDwarfForm = new FormAdd(bindingSource, this, tribeList);
+            addDwarfForm.ShowDialog();
         }
     }
 }

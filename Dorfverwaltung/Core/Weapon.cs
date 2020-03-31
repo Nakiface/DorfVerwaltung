@@ -5,7 +5,7 @@
         public string Typ { get; set; }
         public int Macht { get; set; }
 
-        public Weapon(string type, int force)
+        public Weapon(string type = "", int force = 0)
         {
             this.Typ = type;
             this.Macht = force;

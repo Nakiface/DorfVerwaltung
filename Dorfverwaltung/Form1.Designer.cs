@@ -48,6 +48,13 @@
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
+            this.barButtonItemAddDwarf = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItemDeleteDwarf = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItemAddItem = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditTaxRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditTaxes)).BeginInit();
@@ -66,9 +73,13 @@
             this.barEditItemTaxRate,
             this.barEditItemTaxes,
             this.barButtonItemAddTribe,
-            this.barButtonItemDeleteTribe});
+            this.barButtonItemDeleteTribe,
+            this.barButtonItemAddDwarf,
+            this.barButtonItemDeleteDwarf,
+            this.barButtonItemAddItem,
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 9;
+            this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -183,7 +194,8 @@
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup5});
             this.ribbonPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage3.ImageOptions.Image")));
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Tag = "Dwarf";
@@ -191,11 +203,14 @@
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItemAddDwarf);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
             // ribbonPage4
             // 
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup7});
             this.ribbonPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage4.ImageOptions.Image")));
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Tag = "Weapon";
@@ -226,6 +241,55 @@
             this.gridControl.TabIndex = 1;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // barButtonItemAddDwarf
+            // 
+            this.barButtonItemAddDwarf.Caption = "Hinzufügen";
+            this.barButtonItemAddDwarf.Id = 9;
+            this.barButtonItemAddDwarf.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItemAddDwarf.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItemAddDwarf.Name = "barButtonItemAddDwarf";
+            this.barButtonItemAddDwarf.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemAddDwarf_ItemClick);
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItemDeleteDwarf);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            // 
+            // barButtonItemDeleteDwarf
+            // 
+            this.barButtonItemDeleteDwarf.Caption = "Entfehrnen";
+            this.barButtonItemDeleteDwarf.Id = 10;
+            this.barButtonItemDeleteDwarf.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
+            this.barButtonItemDeleteDwarf.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
+            this.barButtonItemDeleteDwarf.Name = "barButtonItemDeleteDwarf";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItemAddItem);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
+            // barButtonItemAddItem
+            // 
+            this.barButtonItemAddItem.Caption = "Hinzufügen";
+            this.barButtonItemAddItem.Id = 11;
+            this.barButtonItemAddItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemAddItem.ImageOptions.Image")));
+            this.barButtonItemAddItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemAddItem.ImageOptions.LargeImage")));
+            this.barButtonItemAddItem.Name = "barButtonItemAddItem";
+            this.barButtonItemAddItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemAddItem_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Entfehrnen";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image2")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage2")));
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // Form1
             // 
@@ -268,6 +332,13 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemAddTribe;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDeleteTribe;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemAddDwarf;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemDeleteDwarf;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemAddItem;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }
 

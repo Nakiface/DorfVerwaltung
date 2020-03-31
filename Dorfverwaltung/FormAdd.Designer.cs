@@ -32,9 +32,11 @@
             this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
             this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
             this.simpleButtonAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
             this.panelControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlMain
@@ -57,16 +59,24 @@
             this.simpleButtonAdd.Name = "simpleButtonAdd";
             this.simpleButtonAdd.Click += new System.EventHandler(this.simpleButtonAdd_Click);
             // 
+            // checkedListBoxControl1
+            // 
+            resources.ApplyResources(this.checkedListBoxControl1, "checkedListBoxControl1");
+            this.checkedListBoxControl1.CheckMode = DevExpress.XtraEditors.CheckMode.Single;
+            this.checkedListBoxControl1.Name = "checkedListBoxControl1";
+            // 
             // FormAdd
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.checkedListBoxControl1);
             this.Controls.Add(this.simpleButtonAdd);
             this.Controls.Add(this.panelControlMain);
             this.Name = "FormAdd";
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
             this.panelControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -76,5 +86,6 @@
         private DevExpress.XtraEditors.PanelControl panelControlMain;
         private DevExpress.XtraVerticalGrid.VGridControl vGridControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButtonAdd;
+        private DevExpress.XtraEditors.CheckedListBoxControl checkedListBoxControl1;
     }
 }

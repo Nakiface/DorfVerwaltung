@@ -18,7 +18,7 @@ namespace Dorfverwaltung
         public string Führer { get; set; }
         public int Führer_seid { get; set; }
 
-        public Tribe(string name = "", int founding = 0, List<Dwarf> dwarfList = null, Dwarf leader = null, int leadsince = 0)
+        public Tribe(string name, int founding, List<Dwarf> dwarfList, Dwarf leader = null, int leadsince = 0)
         {
             this.Name = name;
             this.Gründung = founding;
