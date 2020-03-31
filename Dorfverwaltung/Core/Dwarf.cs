@@ -6,8 +6,9 @@ namespace Dorfverwaltung
     public interface ITribeMember
     {
         string Name { get; set; }
+        int Alter { get; set; }
     }
-    public class Dwarf
+    public class Dwarf : ITribeMember
     {
         public string Name { get; set; }
         public int Alter { get; set; }

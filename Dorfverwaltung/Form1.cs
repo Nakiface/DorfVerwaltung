@@ -14,53 +14,31 @@ namespace Dorfverwaltung
 {
     public partial class Form1 : Form
     {
-        List<Tribe> tribeList = TribeData.setBaseDataset();
+        private List<Tribe> tribeList = TribeData.setBaseDataset();
         public Form1()
         {
             Initialize();
+        }   
+
+        private void Initialize()
+        {
+            InitializeComponent();
 
             #region Eventhandler
             barEditItemTaxes.EditValueChanged += BarEditItemTaxes_EditValueChanged;
             barEditItemTaxRate.EditValueChanged += BarEditItemTaxRate_EditValueChanged;
-            //gridView1.CellValueChanged += GridView1_CellValueChanged;
-            //gridView1.CellValueChanging += GridView1_CellValueChanging;
-            //gridView1.ColumnWidthChanged += GridView1_ColumnWidthChanged;
-
-
-
             gridView1.MasterRowExpanded += gridMasterRowExpanded;
             gridView1.CellValueChanged += CellValueChangedEventHandler;
-            gridView1.SelectionChanged += SelectionChangedEventHandler;
-            gridView1.FocusedRowChanged += FocusedRowChangedEventHandler;
-
             #endregion
+
+            this.gridControl.DataSource = tribeList;
+            SetTaxes();           
         }
 
-        private void FocusedRowChangedEventHandler(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        public void AddChanges(BindingSource bindingSource)
         {
-            if (!(sender is GridView senderGrid))
-                return;
-
-            var item = senderGrid.GetFocusedDataRow();
-            if (item == null)
-                return;
-
-
-            var itemTypeName = item.GetType().Name;
-            foreach (RibbonPage page in ribbonControl1.Pages)
-            {
-                if (page.Tag?.ToString().Equals(itemTypeName) == true)
-                {
-                    ribbonControl1.SelectedPage = page;
-                    return;
-                }
-            }
-        }
-
-        private void SelectionChangedEventHandler(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-           
-            
+            tribeList = DoStuff.AddStuff(bindingSource, tribeList);
+            gridControl.Refresh();
         }
 
         private void gridMasterRowExpanded(object sender, CustomMasterRowEventArgs e)
@@ -73,17 +51,8 @@ namespace Dorfverwaltung
             System.Diagnostics.Debug.WriteLine($"masterRowExpanden : {e.RowHandle}");
             System.Diagnostics.Debug.WriteLine($"detailGrid : {detailView?.GetType().Name}");
 
-
-
-
-            if(detailView is GridView detailGridView)
+            if (detailView is GridView detailGridView)
             {
-                detailGridView.SelectionChanged -= SelectionChangedEventHandler;
-                detailGridView.SelectionChanged += SelectionChangedEventHandler;
-
-                detailGridView.FocusedRowChanged -= FocusedRowChangedEventHandler;
-                detailGridView.FocusedRowChanged += FocusedRowChangedEventHandler;
-
                 detailGridView.MasterRowExpanded -= gridMasterRowExpanded;
                 detailGridView.MasterRowExpanded += gridMasterRowExpanded;
 
@@ -92,28 +61,10 @@ namespace Dorfverwaltung
             }
         }
 
-        //private void GridView1_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
-        //{
-        //    Console.WriteLine();
-        //}
-
-        //private void GridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        //{
-        //    Console.WriteLine();
-        //}
-
         private void CellValueChangedEventHandler(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            SetTaxes();
             System.Diagnostics.Debug.WriteLine($"{e.RowHandle} {e.Column.FieldName} : {e.Value}");
-        }
-
-        private void Initialize()
-        {
-            InitializeComponent();
-            
-            this.gridControl.DataSource = tribeList;
-            //gridView1.chang
-            SetTaxes();           
         }
 
         #region Taxes
@@ -142,5 +93,12 @@ namespace Dorfverwaltung
         }
         #endregion
 
+        private void barButtonItemAddTribe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = new Tribe();
+            FormAdd addTribeForm = new FormAdd(bindingSource, this);
+            addTribeForm.ShowDialog();
+        }
     }
 }

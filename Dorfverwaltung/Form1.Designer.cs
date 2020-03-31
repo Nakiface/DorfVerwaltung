@@ -35,11 +35,13 @@
             this.repositoryItemSpinEditTaxRate = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.barEditItemTaxes = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemSpinEditTaxes = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.barButtonItemAddTribe = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemDeleteTribe = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -62,9 +64,11 @@
             this.ribbonControl1.SearchEditItem,
             this.barEditItem1,
             this.barEditItemTaxRate,
-            this.barEditItemTaxes});
+            this.barEditItemTaxes,
+            this.barButtonItemAddTribe,
+            this.barButtonItemDeleteTribe});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -123,11 +127,27 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemSpinEditTaxes.Name = "repositoryItemSpinEditTaxes";
             // 
+            // barButtonItemAddTribe
+            // 
+            this.barButtonItemAddTribe.Caption = "Hinzufügen";
+            this.barButtonItemAddTribe.Id = 7;
+            this.barButtonItemAddTribe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemAddTribe.ImageOptions.Image")));
+            this.barButtonItemAddTribe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemAddTribe.ImageOptions.LargeImage")));
+            this.barButtonItemAddTribe.Name = "barButtonItemAddTribe";
+            this.barButtonItemAddTribe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemAddTribe_ItemClick);
+            // 
+            // barButtonItemDeleteTribe
+            // 
+            this.barButtonItemDeleteTribe.Caption = "Entfehrnen";
+            this.barButtonItemDeleteTribe.Id = 8;
+            this.barButtonItemDeleteTribe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemDeleteTribe.ImageOptions.Image")));
+            this.barButtonItemDeleteTribe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemDeleteTribe.ImageOptions.LargeImage")));
+            this.barButtonItemDeleteTribe.Name = "barButtonItemDeleteTribe";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup1});
             this.ribbonPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage1.ImageOptions.Image")));
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Steuern";
@@ -139,15 +159,11 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Steuersatz";
             // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
-            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup2});
             this.ribbonPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage2.ImageOptions.Image")));
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Tag = "Tribe";
@@ -155,8 +171,14 @@
             // 
             // ribbonPageGroup3
             // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItemAddTribe);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup2.ImageOptions.Image")));
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItemDeleteTribe);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPage3
             // 
@@ -241,9 +263,11 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEditTaxRate;
         private DevExpress.XtraBars.BarEditItem barEditItemTaxes;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEditTaxes;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl gridControl;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemAddTribe;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemDeleteTribe;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
 
