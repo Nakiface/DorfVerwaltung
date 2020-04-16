@@ -31,12 +31,17 @@ namespace Dorfverwaltung
         {
             if (vGridControl1.DataSource is BindingSource bindingSource)
             {
-                if (checkedListBoxControl1.CheckedItemsCount != 0)
-                    form1.AddChanges(bindingSource, checkedListBoxControl1.CheckedItems[0].ToString());
-                else
-                    form1.AddChanges(bindingSource, "");
-            }              
+                form1.AddChanges(bindingSource, getSelectedString());
+            }
             this.Close();
+        }
+
+        private string getSelectedString()
+        {
+            if (checkedListBoxControl1.CheckedItemsCount != 0)
+                return checkedListBoxControl1.CheckedItems[0].ToString();
+            else
+                return "";
         }
     }
 }

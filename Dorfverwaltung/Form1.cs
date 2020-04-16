@@ -42,6 +42,13 @@ namespace Dorfverwaltung
             gridControl.RefreshDataSource();
         }
 
+        public void RemoveChanges(Object context, string name)
+        {
+            tribeList = DoStuff.RemoveDataFromList(context, tribeList, name);
+            SetTaxes();
+            gridControl.RefreshDataSource();
+        }
+
         private void gridMasterRowExpanded(object sender, CustomMasterRowEventArgs e)
         {
             if (!(sender is GridView senderGrid))
@@ -116,6 +123,24 @@ namespace Dorfverwaltung
             bindingSource.DataSource = new Weapon();
             FormAdd addDwarfForm = new FormAdd(bindingSource, this, tribeList);
             addDwarfForm.ShowDialog();
+        }
+
+        private void barButtonItemDeleteTribe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormRemove formRemove = new FormRemove(new Tribe("", 0, new List<Dwarf>()), this, tribeList);
+            formRemove.ShowDialog();
+        }
+
+        private void barButtonItemDeleteDwarf_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormRemove formRemove = new FormRemove(new Dwarf("", 0, new List<Weapon>()), this, tribeList);
+            formRemove.ShowDialog();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormRemove formRemove = new FormRemove(new Weapon(), this, tribeList);
+            formRemove.ShowDialog();
         }
     }
 }
