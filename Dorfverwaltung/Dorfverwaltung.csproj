@@ -61,22 +61,22 @@
   <ItemGroup>
     <Compile Include="Core\Dwarf.cs" />
     <Compile Include="DoStuff.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="UI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="UI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRemove.cs">
+    <Compile Include="UI\FormRemove.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRemove.Designer.cs">
+    <Compile Include="UI\FormRemove.Designer.cs">
       <DependentUpon>FormRemove.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAdd.cs">
+    <Compile Include="UI\FormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdd.Designer.cs">
+    <Compile Include="UI\FormAdd.Designer.cs">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -84,16 +84,16 @@
     <Compile Include="Core\Tribe.cs" />
     <Compile Include="Core\TribeData.cs" />
     <Compile Include="Core\Weapon.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="UI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAdd.aa.resx">
+    <EmbeddedResource Include="UI\FormAdd.aa.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAdd.resx">
+    <EmbeddedResource Include="UI\FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRemove.resx">
+    <EmbeddedResource Include="UI\FormRemove.resx">
       <DependentUpon>FormRemove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -120,5 +120,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
