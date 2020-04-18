@@ -101,11 +101,7 @@
             // 
             this.barEditItemTaxRate.Caption = "Steuersatz";
             this.barEditItemTaxRate.Edit = this.repositoryItemSpinEditTaxRate;
-            this.barEditItemTaxRate.EditValue = new decimal(new int[] {
-            2150,
-            0,
-            0,
-            0});
+            this.barEditItemTaxRate.EditValue = 2.125m;
             this.barEditItemTaxRate.EditWidth = 70;
             this.barEditItemTaxRate.Id = 4;
             this.barEditItemTaxRate.Name = "barEditItemTaxRate";
